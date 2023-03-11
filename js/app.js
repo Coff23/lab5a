@@ -53,10 +53,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    let sum = a + b + c;
-    let multiply = a * b * c;
+    let numberArray = [4, 7, 5];
 
-    return [sum, multiply, "4 and 7 and 5 sum to 16.", "The product of 4 and 7 and 5 is 140."];
+    let sum1 = sum(numberArray[0], numberArray[1])[0];
+    let sum2 = sum(sum1, numberArray[2])[0];
+
+    let product1 = multiply(numberArray[0], numberArray[1])[0];
+    let product2 = multiply(product1, numberArray[2])[0];
+
+    let sumString = "4 and 7 and 5 sum to 16.";
+    let productString = "The product of 4 and 7 and 5 is 140.";
+
+    return [sum2, product2, sumString, productString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -78,10 +86,12 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-    let sum = testArray[0] + testArray[1] + testArray[2];
+    let sum1 = sum(testArray[0], testArray[1])[0];
+    let totalSum = sum(sum1, testArray[2])[0];
+
     let sumString = "2,3,4 was passed in as an array of numbers, and 9 is their sum.";
 
-    return [sum, sumString];
+    return [totalSum, sumString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -103,10 +113,11 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
     let productArray = [2, 3, 4];
-    let productAnswer = productArray[0] * productArray[1] * productArray[2];
+    let product1 = multiply(productArray[0], productArray[1])[0];
+    let product2 = multiply(product1, productArray[2])[0];
     let productString = "The numbers 2,3,4 have a product of 24.";
 
-    return [productAnswer, productString];
+    return [product2, productString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
